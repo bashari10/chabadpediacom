@@ -17,10 +17,10 @@
   (או דרך `Special:UserRights/Shraga`)
 
 ## שלב 2 – חיפוש (סעיף 1)
-- [ ] לבדוק בממשק ולהשוות את מספר הדפים לכיסוי של `searchindex`
-- [ ] `php maintenance/run.php rebuildtextindex`
-- [ ] לוודא ש־`$wgDisableSearchUpdate` לא מוגדר ושה־job queue מתרוקן (`showJobs`)
-- [ ] להוסיף cron של `runJobs` אם `$wgJobRunRate` מאפס אותו
+- [x] לבדוק בממשק ולהשוות את מספר הדפים לכיסוי של `searchindex`
+- [x] `php maintenance/run.php rebuildtextindex` (דקה אחת. 27,969→25,052 שורות)
+- [x] לוודא ש־`$wgDisableSearchUpdate` לא מוגדר ושה־job queue מתרוקן (`showJobs`)
+- [x] (לא נדרש. התור ריק וברירת המחדל של `$wgJobRunRate` פעילה) להוסיף cron של `runJobs` אם `$wgJobRunRate` מאפס אותו
 
 ## שלב 3 – robots.txt ו־Sitemap (סעיפים 3, 4)
 - [ ] להחליף את `robots.txt` בתוכן מהמסמך
