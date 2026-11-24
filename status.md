@@ -7,7 +7,7 @@
 - שרת: 8 ליבות, ‏15GB RAM (כ־3.4GB זמינים), דיסק 154GB (39GB פנויים)
 - משתמש `chabadpediacom` **בלי sudo/root**. אין גישה לקונפיגורציית nginx (‏CloudPanel). ‏PHP-FPM 8.1, פורט 16002
 - Cloudflare לפני האתר: בקשות אוטומטיות מקבלות 403 (challenge). בדיקות נעשו מול השרת ישירות (`--resolve ...:127.0.0.1`)
-- crontab: יצירת sitemap כל לילה ב־03:30. Docker ו־ffmpeg לא מותקנים. espeak-ng ו־lame מותקנים (24.11). גישת root קיימת דרך SSH עם מפתח
+- crontab: יצירת sitemap כל לילה ב־03:30. Docker לא מותקן. ffmpeg 6.1 מותקן (24.11). espeak-ng ו־lame מותקנים (24.11). גישת root קיימת דרך SSH עם מפתח
 
 ## מה בוצע
 - ✅ התחברות SSH עם מפתח (מפתח `id_rsa` מהמחשב שלך). תוקנו הרשאות תיקיית הבית ל־750
@@ -23,11 +23,11 @@
 | 3 | Sitemap | ✅ נוצר ב־`sitemap/` (24.11): ‏16 קבצים, ‏11,945 ערכים בלי הפניות. מוגש כ־`text/xml`. ‏cron כל לילה ב־03:30, לוג ב־`~/logs/sitemap.log` |
 | 4 | robots.txt | ✅ הוחלף לפי המסמך (24.11). הגרסה הישנה, כולל Crawl-delay ל־Bing ו־Google, שמורה ב־`~/backups/removed-from-webroot/` |
 | 5 | canonical | ✅ הוגדר `$wgEnableCanonicalServerLink = true` (24.11). נבדק ב־Main_Page ובדף הפניה |
-| 6 | נגן אודיו (TimedMediaHandler) | ✅ בצד השרת: `[[File:x.mp3]]` מ־cphe מוצג כ־`<audio>` עם מקור תקין (200 audio/mpeg). טבלת `transcode` קיימת, ולכן update.php לא נדרש. הקישורים בדפים הם בעיקר `[[Media:...]]`, כלומר קישור ישיר ולא נגן. לא נבדק בדפדפן. ffmpeg לא מותקן, וזה משפיע רק על וידאו |
+| 6 | נגן אודיו (TimedMediaHandler) | ✅ בצד השרת: `[[File:x.mp3]]` מ־cphe מוצג כ־`<audio>` עם מקור תקין (200 audio/mpeg). טבלת `transcode` קיימת, ולכן update.php לא נדרש. הקישורים בדפים הם בעיקר `[[Media:...]]`, כלומר קישור ישיר ולא נגן. לא נבדק בדפדפן. ffmpeg הותקן (24.11): תמונה ממוזערת לסרטון `ניגון_לשבת_ויום_טוב.mp4` נוצרה מחדש. המרות VP9 ישנות נכשלו (timeout), אבל הקובץ הוא h264/aac ומתנגן ישירות בכל דפדפן |
 | 7 | שלושה קבצים פגומים | ✅ הסיבה: אלה דפי הפניה באתר העברי, וה־API שלו מחזיר את היעד עם התחילית `קובץ:`, שהאתר האנגלי לא הכיר. נוסף `$wgNamespaceAliases['קובץ'/'תמונה'] = NS_FILE`. שלושת הקבצים נטענים, וה־API מחזיר 200. לא נמחק כלום |
 | 8 | Google Analytics באתר העברי | ✅ הושבת (24.11) דרך חיבור ChabadPediaCoIl: השורות של ההרחבה ושל `$wgGoogleAnalyticsAccount` הפכו להערות. אין קוד GA בדף הבית וב־Common.js |
 | 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
-| 10 | רישיון | ✅ אנגלית (24.11): קנייני, `All rights to the text are reserved to Nostalgius Inc.`, ‏`Project:Terms of Use`, בלי url ובלי אייקון. נבדק ב־siteinfo ובתחתית הדף. ✅ עברית (24.11): `כל הזכויות על הטקסט שמורות ל-Nostalgius Inc.`, ‏`Project:תנאי שימוש`. נבדק ב־siteinfo |
+| 10 | רישיון | ✅ אנגלית (24.11): קנייני, `All rights to the text are reserved to Nostalgius Inc.`, ‏`Project:Terms of Use`, בלי url ובלי אייקון. נבדק ב־siteinfo ובתחתית הדף. הוסר `<img>` ריק של סמל הרישיון (`unset($wgFooterIcons['copyright'])`). ✅ עברית (24.11): `כל הזכויות על הטקסט שמורות ל-Nostalgius Inc.`, ‏`Project:תנאי שימוש`. נבדק ב־siteinfo |
 | 11 | Phonos | ✅ eSpeak ו־lame הותקנו (24.11). `$wgPhonosEspeak` מצביע על `~/bin/phonos-espeak`, סקריפט שמוסיף את `en` לרשימת הקולות. נבדק עם `lang="en"`, בלי lang, עם `en-us` ועם `he`: כולם מייצרים mp3 תקין שמוגש כ־200. ‏`{{Audio|file.mp3}}` מנגן בלי שגיאה. לא נבדק בדפדפן |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |
 
