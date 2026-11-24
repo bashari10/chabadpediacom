@@ -27,7 +27,7 @@
 | 7 | שלושה קבצים פגומים | ✅ הסיבה: אלה דפי הפניה באתר העברי, וה־API שלו מחזיר את היעד עם התחילית `קובץ:`, שהאתר האנגלי לא הכיר. נוסף `$wgNamespaceAliases['קובץ'/'תמונה'] = NS_FILE`. שלושת הקבצים נטענים, וה־API מחזיר 200. לא נמחק כלום |
 | 8 | Google Analytics באתר העברי | ✅ הושבת (24.11) דרך חיבור ChabadPediaCoIl: השורות של ההרחבה ושל `$wgGoogleAnalyticsAccount` הפכו להערות. אין קוד GA בדף הבית וב־Common.js |
 | 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
-| 10 | רישיון | ✅ אנגלית (24.11): קנייני, `All rights to the text are reserved to Nostalgius Inc.`, ‏`Project:Terms of Use`, בלי url ובלי אייקון. נבדק ב־siteinfo ובתחתית הדף. ⏳ עברית: מחכה לאישור בסשן ChabadPediaCoIl |
+| 10 | רישיון | ✅ אנגלית (24.11): קנייני, `All rights to the text are reserved to Nostalgius Inc.`, ‏`Project:Terms of Use`, בלי url ובלי אייקון. נבדק ב־siteinfo ובתחתית הדף. ✅ עברית (24.11): `כל הזכויות על הטקסט שמורות ל-Nostalgius Inc.`, ‏`Project:תנאי שימוש`. נבדק ב־siteinfo |
 | 11 | Phonos | ✅ eSpeak ו־lame הותקנו (24.11). `$wgPhonosEspeak` מצביע על `~/bin/phonos-espeak`, סקריפט שמוסיף את `en` לרשימת הקולות. נבדק עם `lang="en"`, בלי lang, עם `en-us` ועם `he`: כולם מייצרים mp3 תקין שמוגש כ־200. ‏`{{Audio|file.mp3}}` מנגן בלי שגיאה. לא נבדק בדפדפן |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |
 
