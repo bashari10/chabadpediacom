@@ -7,7 +7,7 @@
 - שרת: 8 ליבות, ‏15GB RAM (כ־3.4GB זמינים), דיסק 154GB (39GB פנויים)
 - משתמש `chabadpediacom` **בלי sudo/root**. אין גישה לקונפיגורציית nginx (‏CloudPanel)
 - Cloudflare לפני האתר: בקשות אוטומטיות מקבלות 403 (challenge). בדיקות נעשו מול השרת ישירות (`--resolve ...:127.0.0.1`)
-- אין crontab למשתמש. Docker ו־ffmpeg לא מותקנים
+- crontab: יצירת sitemap כל לילה ב־03:30. Docker ו־ffmpeg לא מותקנים
 
 ## מה בוצע
 - ✅ התחברות SSH עם מפתח (מפתח `id_rsa` מהמחשב שלך). תוקנו הרשאות תיקיית הבית ל־750
@@ -20,8 +20,8 @@
 |---|---|---|
 | 1 | חיפוש | ✅ האינדקס נבנה מחדש (24.11): ‏25,052 שורות, אחת לכל דף. Rebbe → ‏11,042, ‏Lubavitch → ‏3,360, ‏Tanya → ‏1,676. החיפוש המלא עובד. ההשלמה האוטומטית תלויה ב־rest.php (סעיף 2) |
 | 2 | `rest.php` (השלמה אוטומטית) | ❌ ‏`/rest.php/v1/search/title` מחזיר 404. כנראה כלל השכתוב של nginx |
-| 3 | Sitemap | ❌ אין. ‏`/sitemap.xml` מפנה ל־`/Sitemap.xml` (דף ויקי) |
-| 4 | robots.txt | ❌ חוסם רק `/w/` ו־`/wiki/...`, נתיבים שלא קיימים |
+| 3 | Sitemap | ✅ נוצר ב־`sitemap/` (24.11): ‏16 קבצים, ‏11,945 ערכים בלי הפניות. מוגש כ־`text/xml`. ‏cron כל לילה ב־03:30, לוג ב־`~/logs/sitemap.log` |
+| 4 | robots.txt | ✅ הוחלף לפי המסמך (24.11). הגרסה הישנה, כולל Crawl-delay ל־Bing ו־Google, שמורה ב־`~/backups/removed-from-webroot/` |
 | 5 | canonical | ✅ הוגדר `$wgEnableCanonicalServerLink = true` (24.11). נבדק ב־Main_Page ובדף הפניה |
 | 6 | נגן אודיו (TimedMediaHandler) | ⚠️ ההרחבה **כבר טעונה**, אבל `$wgFFmpegLocation=/usr/bin/ffmpeg` ו־ffmpeg לא מותקן. צריך לבדוק את השגיאה בדף אמיתי |
 | 7 | שלושה קבצים פגומים | ⏳ לא נבדק |

@@ -23,10 +23,10 @@
 - [x] (לא נדרש. התור ריק וברירת המחדל של `$wgJobRunRate` פעילה) להוסיף cron של `runJobs` אם `$wgJobRunRate` מאפס אותו
 
 ## שלב 3 – robots.txt ו־Sitemap (סעיפים 3, 4)
-- [ ] להחליף את `robots.txt` בתוכן מהמסמך
-- [ ] `mkdir sitemap` ולהריץ `generateSitemap` עם `--fspath=$PWD/sitemap`
-- [ ] cron יומי: `crontab -e` → `30 3 * * * cd ~/htdocs/chabadpedia.com && php maintenance/run.php generateSitemap ...`
-- [ ] לבדוק ש־`/sitemap/sitemap-index-chabadpedia.xml` מוגש כ־XML. ✋ אם nginx משכתב אותו לויקי, צריך לתקן ב־CloudPanel
+- [x] להחליף את `robots.txt` בתוכן מהמסמך
+- [x] `mkdir sitemap` ולהריץ `generateSitemap` עם `--fspath=$PWD/sitemap`
+- [x] cron יומי (עם `--skip-redirects`): `crontab -e` → `30 3 * * * cd ~/htdocs/chabadpedia.com && php maintenance/run.php generateSitemap ...`
+- [x] לבדוק ש־`/sitemap/sitemap-index-chabadpedia.xml` מוגש כ־XML (מוגש כ־text/xml, לא היה צריך לשנות את nginx). ✋ אם nginx משכתב אותו לויקי, צריך לתקן ב־CloudPanel
 
 ## שלב 4 – rest.php (סעיף 2) ✋
 - [ ] לבדוק את כלל השכתוב (כנראה `location /` → `index.php`)
