@@ -43,10 +43,10 @@
 
 ## שלב 6 – רשות (סעיפים 10, 11) ✋
 - [ ] רישיון: לעדכן `$wgRightsText`, `$wgRightsUrl` ו־`$wgRightsIcon` אחרי שתבחר
-- [ ] Phonos: להגדיר מנוע TTS (למשל Google, דורש מפתח API), או לבטל את ההרחבה
+- [ ] ✋ Phonos עם eSpeak: root מריץ `apt install -y espeak-ng espeak-ng-espeak lame`, ואז לבדוק כפתור הגייה
 
 ## שלב 7 – האתר העברי (סעיף 8) ✋
-- [ ] chabadpedia.co.il בשרת אחר? צריך גישה. שם: לבטל את Google Analytics Integration או למחוק את `$wgGoogleAnalyticsAccount`
+- [x] (בוצע 24.11 דרך ChabadPediaCoIl) chabadpedia.co.il: שם: לבטל את Google Analytics Integration או למחוק את `$wgGoogleAnalyticsAccount`
 
 ## לעתיד – AI ותוספים (סעיף 12)
 - Wanda, CirrusSearch ו־Elasticsearch: צריך root ו־Docker, וגם להפסיק לבזבז זיכרון (כרגע 12GB בשימוש. לבדוק מה צורך)

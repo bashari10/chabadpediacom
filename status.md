@@ -25,10 +25,10 @@
 | 5 | canonical | ✅ הוגדר `$wgEnableCanonicalServerLink = true` (24.11). נבדק ב־Main_Page ובדף הפניה |
 | 6 | נגן אודיו (TimedMediaHandler) | ✅ בצד השרת: `[[File:x.mp3]]` מ־cphe מוצג כ־`<audio>` עם מקור תקין (200 audio/mpeg). טבלת `transcode` קיימת, ולכן update.php לא נדרש. הקישורים בדפים הם בעיקר `[[Media:...]]`, כלומר קישור ישיר ולא נגן. לא נבדק בדפדפן. ffmpeg לא מותקן, וזה משפיע רק על וידאו |
 | 7 | שלושה קבצים פגומים | ✅ הסיבה: אלה דפי הפניה באתר העברי, וה־API שלו מחזיר את היעד עם התחילית `קובץ:`, שהאתר האנגלי לא הכיר. נוסף `$wgNamespaceAliases['קובץ'/'תמונה'] = NS_FILE`. שלושת הקבצים נטענים, וה־API מחזיר 200. לא נמחק כלום |
-| 8 | Google Analytics באתר העברי | ⏳ אתר אחר (chabadpedia.co.il), לא בשרת הזה? לבירור |
+| 8 | Google Analytics באתר העברי | ✅ הושבת (24.11) דרך חיבור ChabadPediaCoIl: השורות של ההרחבה ושל `$wgGoogleAnalyticsAccount` הפכו להערות. אין קוד GA בדף הבית וב־Common.js |
 | 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
 | 10 | רישיון | ℹ️ כרגע GFDL 1.3. מחכה להחלטה |
-| 11 | Phonos | ⏳ טעון, אין מנוע TTS |
+| 11 | Phonos | ⏳ הוחלט: eSpeak (ברירת המחדל). חסרים `/usr/bin/espeak` ו־`/usr/bin/lame`. צריך root: `apt install espeak-ng espeak-ng-espeak lame` |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |
 
 ## ממצאים נוספים
