@@ -33,7 +33,7 @@
 
 ## האתר העברי (chabadpedia.co.il)
 - ✅ robots.txt ו־sitemap (24.11): ‏`/sitemap/sitemap-index-chabadpediacoil.xml`, ‏23 קבצים, ‏12,773 ערכים במרחב הראשי. שניהם מוגשים כקבצים (200)
-- ⏳ cron לילי (04:00): לא הותקן, כי מערכת ההרשאות בסשן ChabadPediaCoIl חסמה את השינוי. מחכה לאישור
+- ✅ cron לילי ב־04:00 (24.11), לוג ב־`~/logs/sitemap.log` של המשתמש chabadpedia
 
 ## ממצאים נוספים
 - PHP opcache: שינוי ב־`LocalSettings.php` נקלט רק אחרי כמה שניות
