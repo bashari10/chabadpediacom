@@ -5,7 +5,8 @@
 
 ## שלב 0 – אבטחה 🚨 דחוף
 - [x] להעביר את `dump.sql`, את `LocalSettings.php.bak_*` ואת `adminer.php` אל `~/backups/removed-from-webroot/` (בוצע 24.11.2026)
-- [ ] להחליף את סיסמת בסיס הנתונים ואת `$wgSecretKey`, כי ייתכן שכבר דלפו
+- [x] להחליף את `$wgSecretKey`, את `$wgUpgradeKey` ואת `$wgAuthenticationTokenVersion` (בוצע 24.11.2026. כל המשתמשים נותקו)
+- [ ] ✋ להחליף את סיסמת בסיס הנתונים ב־CloudPanel, ואז לעדכן את `$wgDBpassword`
 - [ ] לחסום קבצי `.md` ו־`.bak` בתיקיית האתר, או להעביר אותם אל מחוץ לה (`LocalSettings.php.bak_*` חושף סיסמאות אם הוא מוגש כטקסט!)
 - [ ] לתקן את `$wgDebugLogFile` (או להסיר אותו)
 

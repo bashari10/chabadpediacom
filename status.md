@@ -39,6 +39,8 @@
   - `LocalSettings.php.bak_20260222_040418`: סיסמת בסיס הנתונים ו־`$wgSecretKey`, מוגש כטקסט גולמי
   - `adminer.php`: ממשק כניסה לבסיס הנתונים
   - Cloudflare challenge מקשה על בוטים, אבל לא חוסם גולש אנושי
+- ✅ הוחלפו `$wgSecretKey`, ‏`$wgUpgradeKey` ו־`$wgAuthenticationTokenVersion` (‏1→2). עותק קודם: `~/backups/removed-from-webroot/LocalSettings.php.before-key-rotation-2026-11-24`
+- ❌ סיסמת בסיס הנתונים עדיין לא הוחלפה (צריך CloudPanel)
 - `$wgMainCacheType = CACHE_DB`: טבלת `objectcache` שוקלת 1.7GB
 
 ## תשובות לסעיף 12
