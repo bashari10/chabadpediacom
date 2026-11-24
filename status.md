@@ -42,7 +42,8 @@
   - Cloudflare challenge מקשה על בוטים, אבל לא חוסם גולש אנושי
 - ✅ הוחלפו `$wgSecretKey`, ‏`$wgUpgradeKey` ו־`$wgAuthenticationTokenVersion` (‏1→2). עותק קודם: `~/backups/removed-from-webroot/LocalSettings.php.before-key-rotation-2026-11-24`
 - ❌ סיסמת בסיס הנתונים עדיין לא הוחלפה (צריך CloudPanel)
-- `$wgMainCacheType = CACHE_DB`: טבלת `objectcache` שוקלת 1.7GB
+- `$wgMainCacheType = CACHE_DB`: טבלת `objectcache` ירדה מ־1,716MB ל־1,380MB אחרי OPTIMIZE (24.11, ‏11 שניות). רק 13 רשומות מתוך 733 אלף פגו, ולכן אין מה למחוק. ‏486MB מהנפח הם מטמון `diff` (‏166 אלף השוואות גרסאות, כנראה מבוטים). ה־robots.txt החדש חוסם אותם, והנפח אמור לרדת תוך כשבוע
+- דיסק: 33GB פנויים (הגיבויים ב־`~/backups` תופסים כ־5.6GB)
 
 ## תשובות לסעיף 12
 - **סוג שרת:** VPS, אבל למשתמש הזה אין root/sudo. כדי להתקין שירותים צריך גישת root או את ממשק CloudPanel
