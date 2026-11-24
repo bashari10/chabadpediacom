@@ -43,7 +43,7 @@
 
 ## שלב 6 – רשות (סעיפים 10, 11) ✋
 - [ ] רישיון: לעדכן `$wgRightsText`, `$wgRightsUrl` ו־`$wgRightsIcon` אחרי שתבחר
-- [ ] ✋ Phonos עם eSpeak: root מריץ `apt install -y espeak-ng espeak-ng-espeak lame`, ואז לבדוק כפתור הגייה
+- [x] Phonos עם eSpeak: הותקן ונבדק (24.11). בתבניות להשתמש ב־`lang="en-us"` ולא ב־`en`
 
 ## שלב 7 – האתר העברי (סעיף 8) ✋
 - [x] (בוצע 24.11 דרך ChabadPediaCoIl) chabadpedia.co.il: שם: לבטל את Google Analytics Integration או למחוק את `$wgGoogleAnalyticsAccount`

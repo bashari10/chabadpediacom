@@ -7,7 +7,7 @@
 - שרת: 8 ליבות, ‏15GB RAM (כ־3.4GB זמינים), דיסק 154GB (39GB פנויים)
 - משתמש `chabadpediacom` **בלי sudo/root**. אין גישה לקונפיגורציית nginx (‏CloudPanel). ‏PHP-FPM 8.1, פורט 16002
 - Cloudflare לפני האתר: בקשות אוטומטיות מקבלות 403 (challenge). בדיקות נעשו מול השרת ישירות (`--resolve ...:127.0.0.1`)
-- crontab: יצירת sitemap כל לילה ב־03:30. Docker ו־ffmpeg לא מותקנים
+- crontab: יצירת sitemap כל לילה ב־03:30. Docker ו־ffmpeg לא מותקנים. espeak-ng ו־lame מותקנים (24.11). גישת root קיימת דרך SSH עם מפתח
 
 ## מה בוצע
 - ✅ התחברות SSH עם מפתח (מפתח `id_rsa` מהמחשב שלך). תוקנו הרשאות תיקיית הבית ל־750
@@ -28,7 +28,7 @@
 | 8 | Google Analytics באתר העברי | ✅ הושבת (24.11) דרך חיבור ChabadPediaCoIl: השורות של ההרחבה ושל `$wgGoogleAnalyticsAccount` הפכו להערות. אין קוד GA בדף הבית וב־Common.js |
 | 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
 | 10 | רישיון | ℹ️ כרגע GFDL 1.3. מחכה להחלטה |
-| 11 | Phonos | ⏳ הוחלט: eSpeak (ברירת המחדל). חסרים `/usr/bin/espeak` ו־`/usr/bin/lame`. צריך root: `apt install espeak-ng espeak-ng-espeak lame` |
+| 11 | Phonos | ✅ eSpeak ו־lame הותקנו (24.11). `<phonos ipa=… lang="en-us">` ו־`lang="he"` מייצרים mp3 תקין ב־`images/phonos-render/`, שמוגש כ־200 audio/mpeg. ⚠️ `lang="en"` לא נתמך: צריך `en-us` או `en-gb`. ‏`{{Audio|file.mp3}}` מנגן קבצים מהאתר העברי בלי שגיאה |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |
 
 ## ממצאים נוספים
