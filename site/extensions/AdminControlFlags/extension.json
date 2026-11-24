@@ -1,0 +1,16 @@
+{
+    "name": "AdminControl",
+    "version": "1.0.0",
+    "author": "YourName",
+    "description": "Allows sysops to disable new user creation and anonymous editing.",
+    "type": "extension",
+    "AutoloadClasses": {
+        "AdminControlFlags": "includes/AdminControlFlags.php"
+    },
+    "Hooks": {
+        "BeforePageDisplay": "AdminControlFlags::onBeforePageDisplay",
+        "UserCan": "AdminControlFlags::onUserCan",
+        "AbortNewAccount": "AdminControlFlags::onAbortNewAccount"
+    },
+    "manifest_version": 2
+}

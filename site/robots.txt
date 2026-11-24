@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /w/
+Disallow: /wiki/Special:Search
+Disallow: /wiki/Special:RecentChanges
+Disallow: /wiki/Special:Contributions
+
+# Block aggressive bots
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: Googlebot
+Crawl-delay: 5

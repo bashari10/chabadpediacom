@@ -1,0 +1,52 @@
+{
+	"$schema": "https://vega.github.io/schema/vega/v5.json",
+	"width": 500,
+	"height": 500,
+	"data": [
+		{
+			"name": "pageviews",
+			"values": [],
+			"transform": [
+				{
+					"type": "formula",
+					"expr": "datetime(parseInt(substring(datum.timestamp,0,4)),parseInt(substring(datum.timestamp,4,6))-1,parseInt(substring(datum.timestamp,6,8)))",
+					"as": "date"
+				}
+			]
+		}
+	],
+	"scales": [
+		{
+			"name": "x",
+			"type": "time",
+			"range": "width",
+			"domain": { "data": "pageviews", "field": "date" }
+		},
+		{
+			"name": "y",
+			"type": "linear",
+			"range": "height",
+			"nice": true,
+			"domain": { "data": "pageviews", "field": "views" }
+		}
+	],
+	"axes": [
+		{ "scale": "x", "orient": "bottom", "tickCount": 5 },
+		{ "scale": "y", "orient": "left" }
+	],
+	"marks": [
+		{
+			"type": "area",
+			"from": { "data": "pageviews" },
+			"encode": {
+				"enter": {
+					"interpolate": { "value": "monotone" },
+					"x": { "scale": "x", "field": "date" },
+					"y": { "scale": "y", "field": "views" },
+					"y2": { "scale": "y", "value": "0" },
+					"color": { "value": "#5DA5DA" }
+				}
+			}
+		}
+	]
+}

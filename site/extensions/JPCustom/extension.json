@@ -1,0 +1,53 @@
+{
+	"name": "Chabadpedia Custom Functions",
+	"author": [
+		"Abhishek"
+	],
+	"url": "https://chabadpedia.com",
+	"descriptionmsg": "This extension helps manage all the customizations which should not be placed in LocalSettings.php.",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.42.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\BoilerPlate\\": "src/"
+	},
+	"config": {
+		"DisableAccountCreation": {
+			"description": "Disable Account Creation",
+			"value": false
+		},
+		"DisableAnonEdits": {
+			"description": "Disable Anonymous Edits",
+			"value": true
+		}
+		
+	},
+	"HookHandlers": {
+		"BoilerPlateHooks": {
+			"class": "MediaWiki\\Extension\\BoilerPlate\\Hooks"
+		}
+	},
+	"Hooks":  {
+		"BeforePageDisplay": "BoilerPlateHooks" 
+	},
+	"MessagesDirs": {
+		"BoilerPlate": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.boilerPlate": {
+			"localBasePath": "resources/ext.boilerPlate",
+			"remoteExtPath": "BoilerPlate/resources/ext.boilerPlate",
+			"dependencies": [],
+			"styles": [],
+			"packageFiles": [
+				"init.js"
+			],
+			"messages": []
+		}
+	},
+	"manifest_version": 2
+}
