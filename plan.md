@@ -30,15 +30,16 @@
 
 ## שלב 4 – rest.php (סעיף 2) ✋
 - [ ] לבדוק את כלל השכתוב (כנראה `location /` → `index.php`)
-- [ ] להוסיף ב־CloudPanel → Vhost: `location /rest.php/ { try_files $uri $uri/ /rest.php?$query_string; }`
+- [x] נוסף ב־CloudPanel → Vhost בלוק try_files. התוצאה: 308, כי REQUEST_URI מאבד את הנתיב
+- [ ] ✋ להחליף אותו בבלוק fastcgi ישיר עם `fastcgi_param REQUEST_URI $request_uri`
 - [ ] לבדוק ש־`/rest.php/v1/search/title?q=Rebbe&limit=5` מחזיר JSON
 - אין לי גישה לקונפיגורציית nginx, אז צריך שתעשה את זה ב־CloudPanel או שתיתן לי גישה
 
 ## שלב 5 – מדיה (סעיפים 6, 7)
-- [ ] לפתוח דף עם mp3 ולזהות את השגיאה (ForeignAPIRepo מ־chabadpedia.co.il)
-- [ ] להסיר את `$wgFFmpegLocation` (ffmpeg לא מותקן) או להתקין ffmpeg ✋ (root)
-- [ ] `php maintenance/run.php update`
-- [ ] שלושת הקבצים הפגומים: לנסות `deleteBatch`. אם זה לא מצליח, למחוק מ־`image` ומתיקיית `images/`. הגיבוי קיים
+- [x] לפתוח דף עם mp3 ולזהות את השגיאה (בשרת הנגן מוצג תקין. הדפים משתמשים בעיקר ב־Media:) (ForeignAPIRepo מ־chabadpedia.co.il)
+- [ ] (לא נדרש ל־mp3. נשאר לווידאו) להסיר את `$wgFFmpegLocation` (ffmpeg לא מותקן) או להתקין ffmpeg ✋ (root)
+- [x] `php maintenance/run.php update` (לא נדרש. טבלת transcode קיימת)
+- [x] שלושת הקבצים הפגומים: תוקן עם alias לתחילית `קובץ:`, בלי מחיקה
 
 ## שלב 6 – רשות (סעיפים 10, 11) ✋
 - [ ] רישיון: לעדכן `$wgRightsText`, `$wgRightsUrl` ו־`$wgRightsIcon` אחרי שתבחר
