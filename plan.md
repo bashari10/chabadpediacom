@@ -4,7 +4,7 @@
 ✋ = צריך החלטה, הרשאה או גישה שאין לי.
 
 ## שלב 0 – אבטחה 🚨 דחוף
-- [ ] להעביר את `dump.sql`, את `LocalSettings.php.bak_*` ואת `adminer.php` אל `~/backups/` (כרגע כולם מוגשים לציבור)
+- [x] להעביר את `dump.sql`, את `LocalSettings.php.bak_*` ואת `adminer.php` אל `~/backups/removed-from-webroot/` (בוצע 24.11.2026)
 - [ ] להחליף את סיסמת בסיס הנתונים ואת `$wgSecretKey`, כי ייתכן שכבר דלפו
 - [ ] לחסום קבצי `.md` ו־`.bak` בתיקיית האתר, או להעביר אותם אל מחוץ לה (`LocalSettings.php.bak_*` חושף סיסמאות אם הוא מוגש כטקסט!)
 - [ ] לתקן את `$wgDebugLogFile` (או להסיר אותו)
