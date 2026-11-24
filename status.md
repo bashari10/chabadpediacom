@@ -45,7 +45,7 @@
   - `adminer.php`: ממשק כניסה לבסיס הנתונים
   - Cloudflare challenge מקשה על בוטים, אבל לא חוסם גולש אנושי
 - ✅ הוחלפו `$wgSecretKey`, ‏`$wgUpgradeKey` ו־`$wgAuthenticationTokenVersion` (‏1→2). עותק קודם: `~/backups/removed-from-webroot/LocalSettings.php.before-key-rotation-2026-11-24`
-- ❌ סיסמת בסיס הנתונים עדיין לא הוחלפה (צריך CloudPanel)
+- ✅ סיסמת בסיס הנתונים הוחלפה (24.11) ב־CloudPanel, ו־`$wgDBpassword` עודכן. הסיסמה הישנה כבר לא עובדת
 - `$wgMainCacheType = CACHE_DB`: טבלת `objectcache` ירדה מ־1,716MB ל־1,380MB אחרי OPTIMIZE (24.11, ‏11 שניות). רק 13 רשומות מתוך 733 אלף פגו, ולכן אין מה למחוק. ‏486MB מהנפח הם מטמון `diff` (‏166 אלף השוואות גרסאות, כנראה מבוטים). ה־robots.txt החדש חוסם אותם, והנפח אמור לרדת תוך כשבוע
 - דיסק: 33GB פנויים (הגיבויים ב־`~/backups` תופסים כ־5.6GB)
 
