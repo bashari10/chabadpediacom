@@ -1,0 +1,11 @@
+#!/bin/sh
+# Wrapper for MediaWiki Phonos ($wgPhonosEspeak). 2026-11-24
+# eSpeak-ng lists English only as en-us/en-gb..., so Phonos rejected lang="en"
+# (the wiki's default language). eSpeak itself accepts "en" in SSML, so we only
+# add "en" to the --voices list. Everything else goes straight to espeak-ng.
+if [ "$1" = "--voices" ] && [ $# -eq 1 ]; then
+    /usr/bin/espeak-ng --voices
+    echo " 5  en              --/M      English            gmw/en"
+    exit 0
+fi
+exec /usr/bin/espeak-ng "$@"

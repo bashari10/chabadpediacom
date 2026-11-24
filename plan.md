@@ -43,7 +43,7 @@
 
 ## שלב 6 – רשות (סעיפים 10, 11) ✋
 - [ ] רישיון: לעדכן `$wgRightsText`, `$wgRightsUrl` ו־`$wgRightsIcon` אחרי שתבחר
-- [x] Phonos עם eSpeak: הותקן ונבדק (24.11). בתבניות להשתמש ב־`lang="en-us"` ולא ב־`en`
+- [x] Phonos עם eSpeak: הותקן ונבדק (24.11). ‏`lang="en"` נתמך דרך הסקריפט `~/bin/phonos-espeak` (עותק במאגר)
 
 ## שלב 7 – האתר העברי (סעיף 8) ✋
 - [x] (בוצע 24.11 דרך ChabadPediaCoIl) chabadpedia.co.il: שם: לבטל את Google Analytics Integration או למחוק את `$wgGoogleAnalyticsAccount`

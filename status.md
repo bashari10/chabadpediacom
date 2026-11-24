@@ -28,7 +28,7 @@
 | 8 | Google Analytics באתר העברי | ✅ הושבת (24.11) דרך חיבור ChabadPediaCoIl: השורות של ההרחבה ושל `$wgGoogleAnalyticsAccount` הפכו להערות. אין קוד GA בדף הבית וב־Common.js |
 | 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
 | 10 | רישיון | ℹ️ כרגע GFDL 1.3. מחכה להחלטה |
-| 11 | Phonos | ✅ eSpeak ו־lame הותקנו (24.11). `<phonos ipa=… lang="en-us">` ו־`lang="he"` מייצרים mp3 תקין ב־`images/phonos-render/`, שמוגש כ־200 audio/mpeg. ⚠️ `lang="en"` לא נתמך: צריך `en-us` או `en-gb`. ‏`{{Audio|file.mp3}}` מנגן קבצים מהאתר העברי בלי שגיאה |
+| 11 | Phonos | ✅ eSpeak ו־lame הותקנו (24.11). `$wgPhonosEspeak` מצביע על `~/bin/phonos-espeak`, סקריפט שמוסיף את `en` לרשימת הקולות. נבדק עם `lang="en"`, בלי lang, עם `en-us` ועם `he`: כולם מייצרים mp3 תקין שמוגש כ־200. ‏`{{Audio|file.mp3}}` מנגן בלי שגיאה. לא נבדק בדפדפן |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |
 
 ## ממצאים נוספים
