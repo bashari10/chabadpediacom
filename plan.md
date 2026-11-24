@@ -7,8 +7,8 @@
 - [x] להעביר את `dump.sql`, את `LocalSettings.php.bak_*` ואת `adminer.php` אל `~/backups/removed-from-webroot/` (בוצע 24.11.2026)
 - [x] להחליף את `$wgSecretKey`, את `$wgUpgradeKey` ואת `$wgAuthenticationTokenVersion` (בוצע 24.11.2026. כל המשתמשים נותקו)
 - [ ] ✋ להחליף את סיסמת בסיס הנתונים ב־CloudPanel, ואז לעדכן את `$wgDBpassword`
-- [ ] לחסום קבצי `.md` ו־`.bak` בתיקיית האתר, או להעביר אותם אל מחוץ לה (`LocalSettings.php.bak_*` חושף סיסמאות אם הוא מוגש כטקסט!)
-- [ ] לתקן את `$wgDebugLogFile` (או להסיר אותו)
+- [x] קבצי `.bak` הרגישים הועברו. קבצי `.md` שנשארו הם רק תיעוד של MediaWiki, ולחסימה צריך nginx. **כלל: לא לשמור גיבויים בתיקיית האתר**
+- [x] לתקן את `$wgDebugLogFile`: הושבת והוסבר בהערה (24.11)
 
 ## שלב 1 – הגדרות ב־LocalSettings.php (סעיפים 5, 9)
 - [x] `$wgEnableCanonicalServerLink = true;` ולבדוק שמופיע `<link rel="canonical">`
