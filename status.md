@@ -5,7 +5,7 @@
 ## סביבה
 - MediaWiki 1.43.1, עיצוב Vector 2022, ‏PHP 8.3, ‏MariaDB, שפת האתר: `en`
 - שרת: 8 ליבות, ‏15GB RAM (כ־3.4GB זמינים), דיסק 154GB (39GB פנויים)
-- משתמש `chabadpediacom` **בלי sudo/root**. אין גישה לקונפיגורציית nginx (‏CloudPanel)
+- משתמש `chabadpediacom` **בלי sudo/root**. אין גישה לקונפיגורציית nginx (‏CloudPanel). ‏PHP-FPM 8.1, פורט 16002
 - Cloudflare לפני האתר: בקשות אוטומטיות מקבלות 403 (challenge). בדיקות נעשו מול השרת ישירות (`--resolve ...:127.0.0.1`)
 - crontab: יצירת sitemap כל לילה ב־03:30. Docker ו־ffmpeg לא מותקנים
 
@@ -19,7 +19,7 @@
 | # | משימה | מצב בפועל |
 |---|---|---|
 | 1 | חיפוש | ✅ האינדקס נבנה מחדש (24.11): ‏25,052 שורות, אחת לכל דף. Rebbe → ‏11,042, ‏Lubavitch → ‏3,360, ‏Tanya → ‏1,676. החיפוש המלא עובד. ההשלמה האוטומטית תלויה ב־rest.php (סעיף 2) |
-| 2 | `rest.php` (השלמה אוטומטית) | ⚠️ נוסף בלוק ב־Vhost, והבקשה מגיעה ל־rest.php. אבל `REQUEST_URI` מגיע אליו בלי הנתיב (`/rest.php?q=...`), ולכן MediaWiki מחזיר 308. צריך בלוק fastcgi ישיר במקום try_files |
+| 2 | `rest.php` (השלמה אוטומטית) | ✅ תוקן (24.11): בלוק `location ^~ /rest.php/` עם fastcgi ישיר ל־`127.0.0.1:16002` ו־`REQUEST_URI $request_uri`. ‏`/rest.php/v1/search/title?q=Rebbe` מחזיר JSON |
 | 3 | Sitemap | ✅ נוצר ב־`sitemap/` (24.11): ‏16 קבצים, ‏11,945 ערכים בלי הפניות. מוגש כ־`text/xml`. ‏cron כל לילה ב־03:30, לוג ב־`~/logs/sitemap.log` |
 | 4 | robots.txt | ✅ הוחלף לפי המסמך (24.11). הגרסה הישנה, כולל Crawl-delay ל־Bing ו־Google, שמורה ב־`~/backups/removed-from-webroot/` |
 | 5 | canonical | ✅ הוגדר `$wgEnableCanonicalServerLink = true` (24.11). נבדק ב־Main_Page ובדף הפניה |

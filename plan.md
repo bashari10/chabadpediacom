@@ -29,10 +29,10 @@
 - [x] לבדוק ש־`/sitemap/sitemap-index-chabadpedia.xml` מוגש כ־XML (מוגש כ־text/xml, לא היה צריך לשנות את nginx). ✋ אם nginx משכתב אותו לויקי, צריך לתקן ב־CloudPanel
 
 ## שלב 4 – rest.php (סעיף 2) ✋
-- [ ] לבדוק את כלל השכתוב (כנראה `location /` → `index.php`)
+- [x] לבדוק את כלל השכתוב (כנראה `location /` → `index.php`)
 - [x] נוסף ב־CloudPanel → Vhost בלוק try_files. התוצאה: 308, כי REQUEST_URI מאבד את הנתיב
-- [ ] ✋ להחליף אותו בבלוק fastcgi ישיר עם `fastcgi_param REQUEST_URI $request_uri`
-- [ ] לבדוק ש־`/rest.php/v1/search/title?q=Rebbe&limit=5` מחזיר JSON
+- [x] הוחלף בבלוק fastcgi ישיר עם `fastcgi_param REQUEST_URI $request_uri` ו־`fastcgi_pass 127.0.0.1:16002`
+- [x] לבדוק ש־`/rest.php/v1/search/title?q=Rebbe&limit=5` מחזיר JSON
 - אין לי גישה לקונפיגורציית nginx, אז צריך שתעשה את זה ב־CloudPanel או שתיתן לי גישה
 
 ## שלב 5 – מדיה (סעיפים 6, 7)
