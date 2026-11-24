@@ -22,11 +22,11 @@
 | 2 | `rest.php` (השלמה אוטומטית) | ❌ ‏`/rest.php/v1/search/title` מחזיר 404. כנראה כלל השכתוב של nginx |
 | 3 | Sitemap | ❌ אין. ‏`/sitemap.xml` מפנה ל־`/Sitemap.xml` (דף ויקי) |
 | 4 | robots.txt | ❌ חוסם רק `/w/` ו־`/wiki/...`, נתיבים שלא קיימים |
-| 5 | canonical | ❌ ‏`$wgEnableCanonicalServerLink` לא מוגדר |
+| 5 | canonical | ✅ הוגדר `$wgEnableCanonicalServerLink = true` (24.11). נבדק ב־Main_Page ובדף הפניה |
 | 6 | נגן אודיו (TimedMediaHandler) | ⚠️ ההרחבה **כבר טעונה**, אבל `$wgFFmpegLocation=/usr/bin/ffmpeg` ו־ffmpeg לא מותקן. צריך לבדוק את השגיאה בדף אמיתי |
 | 7 | שלושה קבצים פגומים | ⏳ לא נבדק |
 | 8 | Google Analytics באתר העברי | ⏳ אתר אחר (chabadpedia.co.il), לא בשרת הזה? לבירור |
-| 9 | Shraga לקבוצת bot | ❌ כרגע רק `sysop` |
+| 9 | Shraga לקבוצת bot | ✅ כבר חבר ב־bot (וגם ב־sysop, bureaucrat ו־interface-admin) |
 | 10 | רישיון | ℹ️ כרגע GFDL 1.3. מחכה להחלטה |
 | 11 | Phonos | ⏳ טעון, אין מנוע TTS |
 | 12 | שאלות לבירור | ✅ נענו (ראה למטה) |

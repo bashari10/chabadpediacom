@@ -11,8 +11,8 @@
 - [ ] לתקן את `$wgDebugLogFile` (או להסיר אותו)
 
 ## שלב 1 – הגדרות ב־LocalSettings.php (סעיפים 5, 9)
-- [ ] `$wgEnableCanonicalServerLink = true;` ולבדוק שמופיע `<link rel="canonical">`
-- [ ] להוסיף את Shraga לקבוצת bot:
+- [x] `$wgEnableCanonicalServerLink = true;` ולבדוק שמופיע `<link rel="canonical">`
+- [x] להוסיף את Shraga לקבוצת bot (התברר שהוא כבר בקבוצה):
   `php maintenance/run.php createAndPromote --force --custom-groups=bot Shraga`
   (או דרך `Special:UserRights/Shraga`)
 
